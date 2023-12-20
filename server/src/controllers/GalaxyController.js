@@ -1,3 +1,4 @@
+import { Auth0Provider } from "@bcwdev/auth0provider";
 import { galaxyService } from "../services/GalaxyService.js";
 import BaseController from "../utils/BaseController.js";
 
@@ -8,6 +9,7 @@ export class GalaxyController extends BaseController{
     constructor(){
         super('api/galaxy')
         this.router
+        .use(Auth0Provider.getAuthorizedUserInfo)
         .get('', this.getGalaxy)
         .post('', this.postGalaxy)
         .delete('/:galaxyId', this.deleteGalaxy)
