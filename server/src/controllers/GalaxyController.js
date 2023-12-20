@@ -34,8 +34,8 @@ export class GalaxyController extends BaseController{
 
     async deleteGalaxy(request, response, next){
         try {
-            const galaxyId = request.params.galaxyId
-            const foundGalaxy = galaxyService.deleteGalaxy(galaxyId)
+            const galaxyId = await request.params.galaxyId
+            const foundGalaxy = await galaxyService.deleteGalaxy(galaxyId)
             response.send(foundGalaxy)
         } catch (error) {
             next(error)

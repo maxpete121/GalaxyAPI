@@ -12,7 +12,7 @@ class GalaxyService{
     }
 
     async getGalaxy(){
-        const allGalaxy = await dbContext.Galaxy.find()
+        const allGalaxy = await dbContext.Galaxy.find().populate('planet')
         return allGalaxy
     }
 

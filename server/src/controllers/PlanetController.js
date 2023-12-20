@@ -15,7 +15,7 @@ export class PlanetController extends BaseController{
     async postPlanet(request, response, next){
         try {
             const newPlanet = request.body
-            const Posted = planetService.postPlanet(newPlanet)
+            const Posted = await planetService.postPlanet(newPlanet)
             response.send(Posted)
         } catch (error) {
             next(error)
