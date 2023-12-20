@@ -1,0 +1,8 @@
+version: '3'
+services:
+  app:
+    image: your-dockerhub-username/GalaxyAPI:latest
+    env_file:
+      - GalaxyAPI-env
+    ports:
+      - "3000:3000"
